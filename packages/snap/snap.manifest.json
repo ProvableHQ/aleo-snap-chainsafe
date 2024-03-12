@@ -1,0 +1,46 @@
+{
+  "version": "1.2.2",
+  "description": "The Aleo snap.",
+  "proposedName": "Aleo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chainsafe/aleo-snap.git"
+  },
+  "source": {
+    "shasum": "RJFo26ndlG3rTPAtSIzjLNd/dpge77wMb3gpM5AnC6Y=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "iconPath": "images/logo.svg",
+        "packageName": "@chainsafe/aleo-snap",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "endowment:cronjob": {
+      "jobs": [
+        {
+          "expression": "* * * * *",
+          "request": {
+            "method": "aleo_syncRecords"
+          }
+        }
+      ]
+    },
+    "endowment:rpc": {
+      "dapps": true,
+      "snaps": true
+    },
+    "endowment:webassembly": {},
+    "endowment:network-access": {},
+    "snap_dialog": {},
+    "snap_manageState": {},
+    "snap_getBip44Entropy": [
+      {
+        "coinType": 1
+      }
+    ]
+  },
+  "manifestVersion": "0.1"
+}
